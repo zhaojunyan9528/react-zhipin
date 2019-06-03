@@ -10,7 +10,11 @@
     "less-loader": "^5.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^1.1.5"
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^1.1.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -35,6 +39,7 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.2",
-    "react-app-rewired": "^1.6.2"
+    "react-app-rewired": "^1.6.2",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
