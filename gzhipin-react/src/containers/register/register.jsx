@@ -8,8 +8,12 @@ import {
     Radio,
     Button
 } from 'antd-mobile'
+import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
+import {register} from '../../redux/actions'
 import Logo from '../../components/logo/logo'
-export default class Register extends Component {
+
+class Register extends Component {
     state = {
         username: '',
         password: '',
@@ -26,15 +30,22 @@ export default class Register extends Component {
     }
     // 注册
     register = () => {
-        console.log(JSON.stringify(this.state))
+        this.props.register(this.state)
     }
     render() {
         // const { type } = this.state
+        const {redirectTo, msg} = this.props
+        console.log(redirectTo)
+        console.log(this.props)
+        if (redirectTo) {
+        return <Redirect to={redirectTo}/>
+        }
         return (
             <div>
                 <NavBar>硅谷直聘</NavBar>
                 <Logo />
                 <WingBlank>
+                {msg ? <p className='error-msg'>{msg}</p> : null}
                     <List>
                         <InputItem
                             placeholder='输入用户名'
@@ -78,3 +89,8 @@ export default class Register extends Component {
         )
     }
 }
+
+export default connect(
+    state => state.user,
+    {register}
+)(Register)
