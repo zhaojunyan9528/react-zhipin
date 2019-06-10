@@ -1,6 +1,7 @@
 /*用户列表的 UI 组件
 */
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Card, WingBlank, WhiteSpace } from 'antd-mobile'
 const Header = Card.Header
 const Body = Card.Body
