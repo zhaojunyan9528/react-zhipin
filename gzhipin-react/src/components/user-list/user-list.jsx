@@ -11,7 +11,7 @@ class UserList extends React.Component {
     }
     render() {
         return (
-            <WingBlank>
+            <WingBlank style={{marginBottom:50, marginTop:50}}>
                 {
                     this.props.userList.map(user => (
                         <div key={user._id}>

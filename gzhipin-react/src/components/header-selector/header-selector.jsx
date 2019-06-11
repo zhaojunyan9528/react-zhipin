@@ -17,6 +17,10 @@ export default class HeaderSelectors extends Component {
             this.headerList.push({ text, icon: require(`../../assets/imgs/${text}.png`) })
         }
     }
+    selectHeader = ({text,icon})=> {
+        this.setState({icon})
+        this.props.setHeader(text)
+    }
 
     render() {
         // 计算头部显示

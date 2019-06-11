@@ -87,11 +87,12 @@ const authSuccess = (user) => ({ type: AUTH_SUCCESS, data: user })
 
 const receiveUser = (user) => ({ type: RECEIVE_USER, data: user })
 export const resetUser = (msg) => ({ type: RESET_USER, data: msg })
+//更新用户信息
 export const updateUser = (user) => {
     return async dispatch => {
         const response = await reqUpdateUser(user)
         const result = response.data
-        if (result.code == 0) {
+        if (result.code === 0) {
             dispatch(receiveUser(result.data))
         } else {
             dispatch(resetUser(result.msg))

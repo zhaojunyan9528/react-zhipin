@@ -32,6 +32,8 @@ function user(state = initUser, action) {
             return state
     }
 }
+
+
 const initUserList = []
 function userList(state = initUserList, action) {
     switch (action.type) {

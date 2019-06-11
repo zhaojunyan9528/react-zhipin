@@ -14,7 +14,7 @@ class LaobanInfo extends Component {
         company: '',
         salary: ''
     }
-    hanleChange = (name, val) => {
+    handleChange = (name, val) => {
         this.setState({ [name]: val })
     }
     // 设置更新 header
@@ -33,9 +33,9 @@ class LaobanInfo extends Component {
             <div>
                 <NavBar>老板信息完善</NavBar>
                 <HeaderSelector setHeader={this.setHeader} />
-                <InputItem onChange={val => this.handleChange('post', val)}>招聘职位:</InputItem>
-                <InputItem onChange={val => this.handleChange('company', val)}>公司名称:</InputItem>
-                <InputItem onChange={val => this.handleChange('salary', val)}>职位薪资:</InputItem>
+                <InputItem placeholder='请输入职位' onChange={val => this.handleChange('post', val)} >招聘职位:</InputItem>
+                <InputItem onChange={val => this.handleChange('company', val)} placeholder='请输入公司名称'>公司名称:</InputItem>
+                <InputItem onChange={val => this.handleChange('salary', val)} placeholder='请输入薪资'>职位薪资:</InputItem>
                 <TextareaItem title="职位要求:"
                     rows={3}
                     onChange={val => this.handleChange('info', val)} />
